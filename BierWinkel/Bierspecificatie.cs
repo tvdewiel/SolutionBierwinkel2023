@@ -14,14 +14,12 @@ namespace BierWinkel
         }
         public Bierkleur? Kleur { get; private set; }
        
-        public bool VoldoetAanSpecificatie(Bierspecificatie spec)
+        public bool VoldoetAanSpecificatie(Drankspecificatie spec)
         {
             bool ok = true;
-            if (spec.Kleur != null && spec.Kleur != Kleur) ok=false;
-            if (!string.IsNullOrWhiteSpace(spec.Brouwerij) && spec.Brouwerij != Brouwerij) ok = false;
-            if (spec.Volume.HasValue && spec.Volume > 0 && spec.Volume != Volume) ok = false;
-            if (spec.AlcoholPercentage.HasValue && spec.AlcoholPercentage >= 0 && spec.AlcoholPercentage != AlcoholPercentage) ok = false;
-            if (!string.IsNullOrWhiteSpace(spec.LandVanHerkomst) && spec.LandVanHerkomst != LandVanHerkomst) ok = false;
+            if (spec.GetType() != typeof(Bierspecificatie)) return false;
+            if (((Bierspecificatie)spec).Kleur != null && ((Bierspecificatie)spec).Kleur != this.Kleur) return false;
+            if (!base.VoldoetAanSpecificatie(spec)) ok = false;
             return ok;
         }
         public override string ToString()

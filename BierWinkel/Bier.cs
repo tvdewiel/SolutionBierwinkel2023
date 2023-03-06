@@ -2,14 +2,14 @@
 {
     public class Bier : Drank
     {
-        public Bier(string naam, double prijsPerStuk, Bierspecificatie bierspecificatie, Setgrootte minimumHoeveelheid) :base(naam,prijsPerStuk,minimumHoeveelheid)
+        public Bier(string naam, double prijsPerStuk, Bierspecificatie bierspecificatie, Setgrootte minimumHoeveelheid,Bierspecificatie drankspecificatie) :base(naam,prijsPerStuk,minimumHoeveelheid,drankspecificatie)
         {            
-            Bierspecificatie=bierspecificatie;
+            //Bierspecificatie=bierspecificatie;
         }
-        public Bierspecificatie Bierspecificatie { get; private set; }
+        //public Bierspecificatie Bierspecificatie { get; private set; }
         public override string ToString()
         {
-            return $"{Naam},{PrijsPerStuk},{Bierspecificatie},{MinimumHoeveelheid}";
+            return $"{Naam},{PrijsPerStuk},{Drankspecificatie},{MinimumHoeveelheid}";
         }
     }
 }

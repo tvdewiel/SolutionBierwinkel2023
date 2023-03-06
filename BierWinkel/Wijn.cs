@@ -8,14 +8,14 @@ namespace BierWinkel
 {
     public class Wijn : Drank
     {
-        public Wijn(string naam, double prijsPerStuk, Wijnspecificatie wijnspecificatie, Setgrootte minimumHoeveelheid) : base(naam, prijsPerStuk, minimumHoeveelheid)
+        public Wijn(string naam, double prijsPerStuk, Wijnspecificatie wijnspecificatie, Setgrootte minimumHoeveelheid,Wijnspecificatie drankspecificatie) : base(naam, prijsPerStuk, minimumHoeveelheid,drankspecificatie)
         {
-            Wijnspecificatie = wijnspecificatie;
+            //Wijnspecificatie = wijnspecificatie;
         }
-        public Wijnspecificatie Wijnspecificatie { get; private set; }
+        //public Wijnspecificatie Wijnspecificatie { get; private set; }
         public override string ToString()
         {
-            return $"{Naam},{PrijsPerStuk},{Wijnspecificatie},{MinimumHoeveelheid}";
+            return $"{Naam},{PrijsPerStuk},{Drankspecificatie},{MinimumHoeveelheid}";
         }
     }
 }
