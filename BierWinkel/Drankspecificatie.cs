@@ -22,7 +22,7 @@ namespace BierWinkel
         public Drankvolume? Volume { get; private set; }
         public double? AlcoholPercentage { get; private set; }
         public string LandVanHerkomst { get; private set; }
-        public bool VoldoetAanSpecificatie(Drankspecificatie spec)
+        public virtual bool VoldoetAanSpecificatie(Drankspecificatie spec)
         {
             bool ok = true;
             if (!string.IsNullOrWhiteSpace(spec.Brouwerij) && spec.Brouwerij != Brouwerij) ok = false;

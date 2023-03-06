@@ -14,7 +14,7 @@ namespace BierWinkel
         }
         public Bierkleur? Kleur { get; private set; }
        
-        public bool VoldoetAanSpecificatie(Drankspecificatie spec)
+        public override bool VoldoetAanSpecificatie(Drankspecificatie spec)
         {
             bool ok = true;
             if (spec.GetType() != typeof(Bierspecificatie)) return false;
