@@ -21,5 +21,9 @@ namespace BierWinkel
         public string Naam { get; private set; }
         public double PrijsPerStuk { get; private set; }
         public Setgrootte MinimumHoeveelheid { get; private set; }
+        public override string ToString()
+        {
+            return $"{Naam}";
+        }
     }
 }
